@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(133, 255, 255);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: #0f0673;
+    color: white;
+    height: 75px;
+    font-size: 37px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: .3em;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav .animation {
+    position: relative;
+    animation: tictac 3s linear infinite alternate;
+}
+
+@keyframes tictac {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 415%;
+    }
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.box {
+    border: 2px solid rgb(134, 10, 10);
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background-color: #d9d5de;
+}
+
+.info {
+    font-size: 25px;
+}
+
+.gameInfo {
+    margin-top: 100px;
+    margin-right: 50px;
+    padding: 0 34px;
+    font-family: monospace;
+    transform: rotate(350deg);
+}
+
+.gameInfo h1 {
+    font-size: 2.8rem;
+}
+
+.imgbox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 1px 18px;
+    background: #e1d7e6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    border: 1px solid black;
+}
+
+.line {
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+}
+
+footer{
+    background-color: #0b054e;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 35px;
+}
+
+@media screen and (max-width: 950px) {
+    body{
+        overflow-y: scroll;
+    }
+    nav{
+        justify-content: center;
+    }
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo {
+        margin-top: 34px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+        margin-top: 50px;
+    }
+    nav .animation {
+        position: relative;
+        animation: none;
+    }
+}
